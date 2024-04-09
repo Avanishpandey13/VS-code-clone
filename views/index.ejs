@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="main ">
+    <div class="left ">
+
+      <form action="/createfile" method="post">
+        <input type="text" name="filename" id="">
+      </form>
+
+      <ul>
+       <% files.forEach((file,index)=>{ %>
+
+          <li><a href="/file/<%=file%>"><%=file%></a><a href="/delete/<%=file%>">❌</a></li>
+
+        <%})%>
+      </ul>
+
+    </div>
+
+    <div class="right">
+      <h2><%=filename%></h2>
+      <form action="/update/<%=filename%>" method="post">
+        <textarea name="textdata" id="" cols="100" rows="30"><%=filedata%></textarea>
+
+        <br>
+
+        <button>submit</button>
+      </form>
+    
+    </div>
+
+  </div>
+  
+</body>
+</html>
